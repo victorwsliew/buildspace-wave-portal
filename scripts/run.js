@@ -21,11 +21,13 @@ const main = async () => {
   );
 
   /*
-   * Send Wave
+   * Let's try two waves now
    */
-  let waveTxn = await waveContract.wave("A random message!");
-  await waveTxn.wait(); // Wait for the transaction to be mined
-  
+  const waveTxn = await waveContract.wave("This is wave #1");
+  await waveTxn.wait();
+
+  const waveTxn2 = await waveContract.wave("This is wave #2");
+  await waveTxn2.wait();
   /*
     * Get Contract balance to see what happened!
     */
